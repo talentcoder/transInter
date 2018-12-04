@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contentDiv2" contenteditable="true" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); outline: 0px; margin: 3px 0px; font-size: 28px; color: rgb(0, 0, 0); min-height: 26px; word-break: break-all; font-weight: normal; -webkit-user-modify: read-write-plaintext-only;">
+        As far as nutritional value it concerned, a serving is half a cup and has lots of fiber, 220 calories and a decent amount of fat.</div>
+
+<div id="contentDiv3"><div>
+        <script>
+        var div_str = document.getElementById('contentDiv2').innerText;
+    
+         document.getElementById("contentDiv3").innerText = div_str;
+        </script>
+
+
+
+<script src="http://shared.ydstatic.com/js/jquery/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script type="text/javascript">
+var appKey = '4f3310ac62c245ca';
+var key = '1Ikyl9cQFychILLJld2toeNpe6o4zVkm';//注意：暴露appSecret，有被盗用造成损失的风险
+var salt = (new Date).getTime();
+var query = '你好';
+// 多个query可以用\n连接  如 query='apple\norange\nbanana\npear'
+var from = '';
+var to = 'en';
+var str1 = appKey + query + salt +key;
+var sign = md5(str1);
+$.ajax({
+    url: 'http://openapi.youdao.com/api',
+    type: 'post',
+    dataType: 'jsonp',
+    data: {
+        q: query,
+        appKey: appKey,
+        salt: salt,
+        from: from,
+        to: to,
+        sign: sign
+    },
+    success: function (data) {
+        console.log(data.query);
+        
+    } 
+});
+
+</script>
+
+
+
+       
+
+
+</body>
+</html>
