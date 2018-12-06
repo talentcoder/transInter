@@ -12,3 +12,5 @@
 错误
 cann't set property innertext of null
 这个问题需要找方法解决
+
+解决：但是用快捷键不用下一条，就没有这个问题
